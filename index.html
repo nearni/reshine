@@ -2,219 +2,192 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>亮睿有限公司</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
   <style>
- body {
-  font-family: "Noto Sans JP", sans-serif;
-  background-color: #ffffff;
-  color: #2c2c2c;
-  margin: 0;
-}
+    body {
+      font-family: "Noto Sans JP", sans-serif;
+      margin: 0;
+      background-color: #ffffff;
+      color: #2c2c2c;
+    }
 
-header {
-  background-color: #e0f0f9;
-  border-bottom: 1px solid #c0d8e0;
-  padding: 1rem 2rem;
-  text-align: center;
-}
+    header {
+      background-color: #e0f0f9;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid #c0d8e0;
+      text-align: center;
+    }
 
-header h1 {
-  font-size: 1.8rem;
-  color: #2c3e50;
-  letter-spacing: 2px;
-}
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #2c3e50;
+      letter-spacing: 2px;
+    }
 
-nav a, nav button {
-  color: #2c3e50;
-}
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      gap: 1.5rem;
+    }
 
-nav a:hover, nav button:hover {
-  border-bottom: 2px solid #4a90e2;
-}
+    nav a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: 500;
+      font-size: 1rem;
+      padding-bottom: 0.2rem;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s;
+    }
 
-.section-title {
-  font-size: 1.5rem;
-  margin: 2rem 0 1rem;
-  color: #2c3e50;
-  text-align: center;
-}
+    nav a:hover {
+      border-bottom: 2px solid #4a90e2;
+    }
 
-.product-card {
-  background-color: #f8fbfd;
-  border: 1px solid #d0e3ec;
-  border-radius: 10px;
-  padding: 1rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
+    .section {
+      padding: 2rem 1.5rem;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-.product-card h3 {
-  font-size: 1.1rem;
-  color: #2c3e50;
-}
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      color: #2c3e50;
+      margin-bottom: 2rem;
+    }
 
-.product-card p {
-  color: #4a90e2;
-  font-weight: bold;
-}
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
 
-.btn {
-  background-color: #4a90e2;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 999px;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
+    .service-card {
+      background-color: #f8fbfd;
+      border: 1px solid #d0e3ec;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease;
+    }
 
-.btn:hover {
-  background-color: #357ab8;
-}
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
 
-#cart-modal {
-  background: rgba(0, 0, 0, 0.5);
-}
+    .service-card h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: #2c3e50;
+    }
 
-.cart-box {
-  background-color: #ffffff;
-  border: 1px solid #dbe9f2;
-}
+    .service-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #444;
+    }
 
-footer {
-  text-align: center;
-  padding: 2rem;
-  font-size: 0.9rem;
-  color: #777;
-}
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      background-color: #4a90e2;
+      color: white;
+      padding: 0.5rem 1.2rem;
+      border: none;
+      border-radius: 999px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
 
-    
+    .btn:hover {
+      background-color: #357ab8;
+    }
+
+    footer {
+      background-color: #f0f5f9;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
-    <h1>亮睿有限公司</h1>
+    <h1>專業清潔與人力派遣服務</h1>
     <nav>
       <ul>
-        <li><a href="#clean">建築物清潔服務</a></li>
-        <li><a href="#People">人力派遣</a></li>
-        <li><a href="#daily">清潔用品批發零售</a></li>
-        <li><button onclick="viewCart()">🛒 購物車 (<span id="cart-count">0</span>)</button></li>
+        <li><a href="#">首頁</a></li>
+        <li><a href="#">建築物清潔</a></li>
+        <li><a href="#">人力派遣</a></li>
+        <li><a href="#">合作案例</a></li>
+        <li><a href="#">聯絡我們</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Main Content -->
-  <main>
-
-    <!-- 建築物清潔服務 -->
-    <section id="women">
-      <h2 class="section-title">建築物清潔服務</h2>
-      <div class="product-grid">
-        <div class="product-card">
-          <img src="./images/dress.jpg" alt="外牆清洗與玻璃清潔">
-          <h3>🏢 外牆清洗與玻璃清潔</h3>
-        </div>
-         <div class="product-card">
-          <img src="./images/micaasato.jpg" alt="地板打蠟與深層保養">
-          <h3>🧹 地板打蠟與深層保養</h3> 
-        </div>
-         <div class="product-card">
-          <img src="./images/micaasato.jpg" alt="地板打蠟與深層保養">
-          <h3>🧹 地板打蠟與深層保養</h3> 
-        </div>
+  <section class="section">
+    <h2 class="section-title">建築物清潔服務</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>日常清潔維護</h3>
+        <p>提供辦公室、住宅、公共空間的定期清潔維護，確保環境整潔衛生。</p>
       </div>
-    </section>
-
-    <!-- 人力派遣 -->
-    <section id="furniture">
-      <h2 class="section-title">人力派遣</h2>
-      <div class="product-grid">
-        <div class="product-card">
-          <img src="./images/designecologist.jpg" alt="清潔人員">
-          <h3>👥清潔人員</h3>
-        </div>
-        <div class="product-card">
-          <img src="./images/pixabay.jpg" alt="倉儲物流人員">
-          <h3>👥倉儲物流人員</h3>
-        </div>
-        <div class="product-card">
-          <img src="./images/pixabay.jpg" alt="現場作業/技術工人">
-          <h3>👥現場作業/技術工人</h3>
-        </div>
+      <div class="service-card">
+        <h3>玻璃與外牆清洗</h3>
+        <p>高空與地面玻璃窗、外牆清洗，使用專業設備與安全防護。</p>
       </div>
-    </section>
-
-    <!-- 清潔用品批發零售 -->
-    <section id="daily">
-      <h2 class="section-title">🧴 清潔用品</h2>
-      <div class="product-grid">
-        <div class="product-card">
-          <img src="./images/grabowska.jpg" alt="洗手乳">
-          <h3>草本洗手乳</h3>
-          <p>$149</p>
-          <button class="btn" onclick="addToCart('草本洗手乳', 149)">加入購物車</button>
-        </div>
-         <div class="product-card">
-          <img src="./images/karpovich.jpg" alt="滾筒衛生紙">
-          <h3>滾筒衛生紙</h3>
-          <p>$200</p>
-          <button class="btn" onclick="addToCart('滾筒衛生紙', 200)">加入購物車</button>
-        </div>
+      <div class="service-card">
+        <h3>地板打蠟保養</h3>
+        <p>針對各類地材進行打蠟、晶化與深層清潔，延長使用壽命。</p>
       </div>
-    </section>
-  </main>
-
-  <!-- 購物車視窗 -->
-  <div id="cart-modal">
-    <div class="cart-box">
-      <h3 class="text-xl font-bold mb-4">🛒 購物車內容</h3>
-      <ul id="cart-list" class="mb-4"></ul>
-      <p id="cart-total" class="font-semibold">總計：$0</p>
-      <button onclick="closeCart()" class="btn mt-4">關閉</button>
     </div>
-  </div>
+  </section>
 
-  <!-- Footer -->
-<footer>
-    &copy; 亮睿有限公司
-     <div>
-          <p>統編：60778373</p>
-        </div>
+  <section class="section">
+    <h2 class="section-title">人力派遣服務</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>清潔人員派遣</h3>
+        <p>彈性派遣專業清潔人力，支援各類商辦與活動現場。</p>
+      </div>
+      <div class="service-card">
+        <h3>倉儲物流支援</h3>
+        <p>提供倉庫整理、上下貨、物流打包等人力支援服務。</p>
+      </div>
+      <div class="service-card">
+        <h3>短期臨時工</h3>
+        <p>活動、展覽、工程等臨時需求，迅速媒合適合人選。</p>
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <a class="btn" href="#">立即洽詢人力派遣</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 亮睿有限公司 | 服務值得信賴 ｜ 60778373
   </footer>
-  <!-- JS 購物車邏輯 -->
-  <script>
-    const cart = [];
 
-    function addToCart(name, price) {
-      cart.push({ name, price });
-      document.getElementById("cart-count").innerText = cart.length;
-    }
-
-    function viewCart() {
-      const list = document.getElementById("cart-list");
-      const total = document.getElementById("cart-total");
-      list.innerHTML = "";
-      let sum = 0;
-
-      cart.forEach(item => {
-        const li = document.createElement("li");
-        li.textContent = `${item.name} - $${item.price}`;
-        list.appendChild(li);
-        sum += item.price;
-      });
-
-      total.textContent = `總計：$${sum}`;
-      document.getElementById("cart-modal").classList.add("active");
-    }
-
-    function closeCart() {
-      document.getElementById("cart-modal").classList.remove("active");
-    }
-  </script>
 </body>
 </html>
