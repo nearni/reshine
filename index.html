@@ -1,1 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>亮睿有限公司</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Noto Sans JP", sans-serif;
+      background-color: #f9f5f0;
+      color: #333;
+      margin: 0;
+    }
 
+    header {
+      background-color: #fffaf3;
+      border-bottom: 1px solid #e5e0dc;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      color: #a35c3b;
+      letter-spacing: 2px;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      list-style: none;
+      padding: 0;
+      margin-top: 0.5rem;
+    }
+
+    nav a, nav button {
+      text-decoration: none;
+      color: #8a6f5e;
+      font-weight: 500;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 0.2rem;
+    }
+
+    nav a:hover, nav button:hover {
+      border-bottom: 2px solid #d8b08c;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem;
+      color: #684f40;
+      text-align: center;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 0 2rem 2rem;
+    }
+
+    .product-card {
+      background-color: #fffdf9;
+      border: 1px solid #e8e3de;
+      border-radius: 10px;
+      padding: 1rem;
+      transition: transform 0.2s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 0.8rem;
+    }
+
+    .product-card h3 {
+      font-size: 1.1rem;
+      color: #5c4333;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-card p {
+      color: #c84c3f;
+      font-weight: bold;
+    }
+
+    .btn {
+      background-color: #deb59b;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #c89a7d;
+    }
+
+    #cart-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #cart-modal.active {
+      display: flex;
+    }
+
+    .cart-box {
+      background-color: #fffdf9;
+      padding: 2rem;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>競界有限公司</h1>
+    <nav>
+      <ul>
+        <li><a href="#women">女服飾</a></li>
+        <li><a href="#furniture">家具裝飾</a></li>
+        <li><a href="#daily">日用品</a></li>
+        <li><button onclick="viewCart()">🛒 購物車 (<span id="cart-count">0</span>)</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- 建築物清潔服務 -->
+    <section id="women">
+      <h2 class="section-title">建築物清潔服務</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="./images/dress.jpg" alt="洋裝">
+          <h3>夏日洋裝</h3>
+          <p>$599</p>
+          <button class="btn" onclick="addToCart('夏日洋裝', 599)">加入購物車</button>
+        </div>
+         <div class="product-card">
+          <img src="./images/micaasato.jpg" alt="牛仔">
+          <h3>單寧牛仔</h3>
+          <p>$799</p>
+          <button class="btn" onclick="addToCart('牛仔', 799)">加入購物車</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 人力派遣 -->
+    <section id="furniture">
+      <h2 class="section-title">人力派遣</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="./images/designecologist.jpg" alt="抱枕">
+          <h3>印花抱枕</h3>
+          <p>$299</p>
+          <button class="btn" onclick="addToCart('印花抱枕', 299)">加入購物車</button>
+        </div>
+        <div class="product-card">
+          <img src="./images/pixabay.jpg" alt="掛畫">
+          <h3>掛畫</h3>
+          <p>$550</p>
+          <button class="btn" onclick="addToCart('掛畫', 550)">加入購物車</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 清潔用品批發零售 -->
+    <section id="daily">
+      <h2 class="section-title">🧴 清潔用品</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="./images/grabowska.jpg" alt="洗手乳">
+          <h3>草本洗手乳</h3>
+          <p>$149</p>
+          <button class="btn" onclick="addToCart('草本洗手乳', 149)">加入購物車</button>
+        </div>
+         <div class="product-card">
+          <img src="./images/karpovich.jpg" alt="滾筒衛生紙">
+          <h3>滾筒衛生紙</h3>
+          <p>$200</p>
+          <button class="btn" onclick="addToCart('滾筒衛生紙', 200)">加入購物車</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 購物車視窗 -->
+  <div id="cart-modal">
+    <div class="cart-box">
+      <h3 class="text-xl font-bold mb-4">🛒 購物車內容</h3>
+      <ul id="cart-list" class="mb-4"></ul>
+      <p id="cart-total" class="font-semibold">總計：$0</p>
+      <button onclick="closeCart()" class="btn mt-4">關閉</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+<footer>
+    &copy; 亮睿有限公司
+     <div>
+          <p>統編：60778373</p>
+        </div>
+  </footer>
+  <!-- JS 購物車邏輯 -->
+  <script>
+    const cart = [];
+
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      document.getElementById("cart-count").innerText = cart.length;
+    }
+
+    function viewCart() {
+      const list = document.getElementById("cart-list");
+      const total = document.getElementById("cart-total");
+      list.innerHTML = "";
+      let sum = 0;
+
+      cart.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `${item.name} - $${item.price}`;
+        list.appendChild(li);
+        sum += item.price;
+      });
+
+      total.textContent = `總計：$${sum}`;
+      document.getElementById("cart-modal").classList.add("active");
+    }
+
+    function closeCart() {
+      document.getElementById("cart-modal").classList.remove("active");
+    }
+  </script>
+</body>
+</html>
