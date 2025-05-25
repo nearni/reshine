@@ -6,151 +6,103 @@
   <title>亮睿有限公司</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: "Noto Sans JP", sans-serif;
-      background-color: #f9f5f0;
-      color: #333;
-      margin: 0;
-    }
+ body {
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #ffffff;
+  color: #2c2c2c;
+  margin: 0;
+}
 
-    header {
-      background-color: #fffaf3;
-      border-bottom: 1px solid #e5e0dc;
-      padding: 1rem 2rem;
-      text-align: center;
-    }
+header {
+  background-color: #e0f0f9;
+  border-bottom: 1px solid #c0d8e0;
+  padding: 1rem 2rem;
+  text-align: center;
+}
 
-    header h1 {
-      font-size: 1.8rem;
-      color: #a35c3b;
-      letter-spacing: 2px;
-    }
+header h1 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  letter-spacing: 2px;
+}
 
-    nav ul {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      list-style: none;
-      padding: 0;
-      margin-top: 0.5rem;
-    }
+nav a, nav button {
+  color: #2c3e50;
+}
 
-    nav a, nav button {
-      text-decoration: none;
-      color: #8a6f5e;
-      font-weight: 500;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      padding: 0.2rem;
-    }
+nav a:hover, nav button:hover {
+  border-bottom: 2px solid #4a90e2;
+}
 
-    nav a:hover, nav button:hover {
-      border-bottom: 2px solid #d8b08c;
-    }
+.section-title {
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem;
+  color: #2c3e50;
+  text-align: center;
+}
 
-    .section-title {
-      font-size: 1.5rem;
-      margin: 2rem 0 1rem;
-      color: #684f40;
-      text-align: center;
-    }
+.product-card {
+  background-color: #f8fbfd;
+  border: 1px solid #d0e3ec;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
 
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      padding: 0 2rem 2rem;
-    }
+.product-card h3 {
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
 
-    .product-card {
-      background-color: #fffdf9;
-      border: 1px solid #e8e3de;
-      border-radius: 10px;
-      padding: 1rem;
-      transition: transform 0.2s ease;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
+.product-card p {
+  color: #4a90e2;
+  font-weight: bold;
+}
 
-    .product-card:hover {
-      transform: translateY(-5px);
-    }
+.btn {
+  background-color: #4a90e2;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-    .product-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 6px;
-      margin-bottom: 0.8rem;
-    }
+.btn:hover {
+  background-color: #357ab8;
+}
 
-    .product-card h3 {
-      font-size: 1.1rem;
-      color: #5c4333;
-      margin-bottom: 0.5rem;
-    }
+#cart-modal {
+  background: rgba(0, 0, 0, 0.5);
+}
 
-    .product-card p {
-      color: #c84c3f;
-      font-weight: bold;
-    }
+.cart-box {
+  background-color: #ffffff;
+  border: 1px solid #dbe9f2;
+}
 
-    .btn {
-      background-color: #deb59b;
-      color: #fff;
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 999px;
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #777;
+}
 
-    .btn:hover {
-      background-color: #c89a7d;
-    }
-
-    #cart-modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      display: none;
-      justify-content: center;
-      align-items: center;
-    }
-
-    #cart-modal.active {
-      display: flex;
-    }
-
-    .cart-box {
-      background-color: #fffdf9;
-      padding: 2rem;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
+    
   </style>
 </head>
 <body>
 
   <!-- Header -->
   <header>
-    <h1>競界有限公司</h1>
+    <h1>亮睿有限公司</h1>
     <nav>
       <ul>
-        <li><a href="#women">女服飾</a></li>
-        <li><a href="#furniture">家具裝飾</a></li>
-        <li><a href="#daily">日用品</a></li>
+        <li><a href="#clean">建築物清潔服務</a></li>
+        <li><a href="#People">人力派遣</a></li>
+        <li><a href="#daily">清潔用品批發零售</a></li>
         <li><button onclick="viewCart()">🛒 購物車 (<span id="cart-count">0</span>)</button></li>
       </ul>
     </nav>
