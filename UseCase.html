@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>服務實景展示</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Noto Sans JP", sans-serif;
+      margin: 0;
+      background-color: #ffffff;
+      color: #2c2c2c;
+    }
+
+    header {
+      background-color: #e0f0f9;
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #2c3e50;
+    }
+
+    .gallery-section {
+      padding: 2rem 1.5rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      color: #2c3e50;
+      margin-bottom: 2rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery-card {
+      background-color: #f8fbfd;
+      border: 1px solid #d0e3ec;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .gallery-card .info {
+      padding: 1rem;
+    }
+
+    .gallery-card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.1rem;
+      color: #2c3e50;
+    }
+
+    .gallery-card p {
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    footer {
+      background-color: #f0f5f9;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>服務實景展示</h1>
+  </header>
+
+  <section class="gallery-section">
+    <h2 class="section-title">我們的專業現場</h2>
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <img src="https://source.unsplash.com/featured/?cleaning" alt="日常清潔">
+        <div class="info">
+          <h3>辦公室清潔</h3>
+          <p>定期打掃與消毒，維持舒適安全的工作環境。</p>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img src="https://source.unsplash.com/featured/?janitor" alt="清潔人員">
+        <div class="info">
+          <h3>專業清潔人員</h3>
+          <p>統一制服與教育訓練，展現一致專業形象。</p>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img src="https://source.unsplash.com/featured/?warehouse,worker" alt="倉儲支援">
+        <div class="info">
+          <h3>倉儲支援</h3>
+          <p>物流作業、人力協助，提升作業效率。</p>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img src="https://source.unsplash.com/featured/?glass,cleaning" alt="外牆玻璃清洗">
+        <div class="info">
+          <h3>高空外牆玻璃清洗</h3>
+          <p>採用安全吊掛設備與專業作業流程。</p>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img src="https://source.unsplash.com/featured/?floor,waxing" alt="地板打蠟">
+        <div class="info">
+          <h3>地板打蠟保養</h3>
+          <p>使用專業機器與藥劑，恢復地面光澤。</p>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img src="https://source.unsplash.com/featured/?staff,teamwork" alt="活動臨時工">
+        <div class="info">
+          <h3>活動臨時工支援</h3>
+          <p>臨時派遣支援活動、展覽、搬運等場域。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 亮睿有限公司 | 現場專業 品質保證 | 60778373
+  </footer>
+
+</body>
+</html>
